@@ -1,0 +1,41 @@
+.strong_us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+    margin: 200px 0;
+}
+
+.us_image{
+    border-radius: 50%;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 5px solid white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+
+}
+
+.us_image img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the circle properly */
+}
+
+.us_cap {
+    /* text-align: center; */
+    max-width: 500px; /* Limits text width for better readability */
+}
+
+@font-face {
+    font-family: "text-font";
+    src: url("../font/Open_Sans/OpenSans-Italic-VariableFont_wdth,wght.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.us_cap p{
+    font-family: "text-font", sans-serif;
+}

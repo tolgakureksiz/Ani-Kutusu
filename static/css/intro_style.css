@@ -1,0 +1,92 @@
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+.floating-img {
+    position: absolute;
+    z-index: 1;
+    width: 150px;
+    border: 5px solid white;
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.floating-img:hover {
+    transform: rotate(10deg); /* Adjust the degree as needed */
+}
+
+.img1 {
+    top: 10%;
+    left: 5%;
+}
+
+
+.img2 {
+    top: 30%;
+    right: 5%;
+}
+
+.img3 {
+    bottom: 10%;
+    left: 15%;
+}
+
+/* Location */
+.location {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Scroll Down Indicator */
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Hero Title */
+.hero-title {
+    font-size: 80px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.blobing::before,
+.blobing::after {
+  content: '';
+  position: absolute;
+  filter: blur(80px);
+  opacity: 0.2;
+  z-index: 1001;
+}
+
+.blobing::before {
+    top: -50px;
+    left: -50px;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+    border-radius: 30% 70% 70% 30%;
+    z-index: 1001;
+  }
+
+  .blobing::after {
+    bottom: -100px;
+    right: -100px;
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(45deg, #4b6cb7, #00c6fb);
+    border-radius: 70% 30% 30% 70%;
+    z-index: 1001;
+  }
+

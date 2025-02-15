@@ -1,0 +1,83 @@
+.form_only {
+    padding: 30px;
+    border-radius: 5px;
+    background-color: #F8F8FF;
+    width: 30%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+
+
+.form_only header{
+    color: black;
+    font-size: 27px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.form_section {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; 
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+
+.form_only form{
+    display: flex;
+    height: 100px;
+    margin: 30px 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 2px dashed;
+    cursor: pointer;
+
+}
+
+section .form-row {
+    margin-bottom: 10px;
+    list-style: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section .form-row i {
+    font-size: 30px;
+}
+
+.progress-area .form-row .content {
+    width: 100%;
+    margin-left: 15px;
+}
+
+.progress-area .details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+section .details span{
+    font-size: 14px;
+
+}
+
+.uploaded-area .form-row .details{
+    display: flex;
+    margin-left: 15px;
+    flex-direction: column;
+
+}
+.uploaded-area .form-row .content{
+    display: flex;
+    /* align-items: center; */
+
+}
+
+.uploaded-area .details .size {
+    font-size: 11px;
+}
