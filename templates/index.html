@@ -30,9 +30,9 @@
             </a>
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Albums</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#upload">Upload</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about-us">About us</a></li>
                 </ul>
         </nav>
     </div>
@@ -50,24 +50,28 @@
         </section>
        
     </div>
-    <div class="strong_us">
-        <div class="us_image">
-            <img src="{{ url_for('static', filename='logo/about_us.jpg') }}">
-        </div>
-        <div class="us_cap">
-            <h1>Hello, we're</h1>
-            <h2>Meo Meo and Mao Mao</h2>
-            <hr>
-            <p>This website is where we share our favorite moments, capturing the joy, laughter, and adventures we experience together. From everyday snapshots to unforgettable memories, this is our little corner of the internet to celebrate and cherish the special times we’ve had. We hope you enjoy browsing through our collection as much as we love creating it!</p>
+    <hr style="width: 50%; margin: auto;">
+    <div class="about-us" id="about-us">
+        <h1 style="font-size: 70px;">About us</h1>
+        <div class="strong_us">
+            <div class="us_image">
+                <img src="{{ url_for('static', filename='logo/about_us.jpg') }}">
+            </div>
+            <div class="us_cap">
+                <h1>Hello, we're</h1>
+                <h2>Meo Meo and Mao Mao</h2>
+                <hr>
+                <p>This website is where we share our favorite moments, capturing the joy, laughter, and adventures we experience together. From everyday snapshots to unforgettable memories, this is our little corner of the internet to celebrate and cherish the special times we’ve had. We hope you enjoy browsing through our collection as much as we love creating it!</p>
+            </div>
         </div>
     </div>
     <!-- 🔹 Image Gallery Below -->
-     <div style="background-color: #F9F6EE; padding: 20px 0px 100px 0px">
+     <div class="frame">
         <div class="container">
             <div class="title hero-title">Gallery</div>
             <div class="grid-container justified-gallery" id="gallery">
                 {% for image in images %}
-                    <div><img src="{{ url_for('static', filename=image) }}" alt="Photo 1"></div>
+                    <div class="image-style" data-description="{{ image.description }}"><img src="{{ url_for('static', filename=image) }}" alt="Photo 1"></div>
                 {% endfor %}             
             </div>
         </div>
@@ -84,58 +88,38 @@
         });
     </script>
    
-    <div class="container form_section">
+    <div class="container form_section" id="upload">
+        <h1 style="font-size: 70px">Gallery Contribution</h1>
         <div class="form_only">
             <header>File Uploader</header>
-            <form action="/upload" method="POST" enctype=multipart/form-data>
-                <input type="file" name="file" class="file-input" hidden>
-                <i class="fas fa-cloud-upload-alt"></i>
-                <p>Browse file to upload</p>
-            </form>
-            <section class="progress-area">
-                <li class="form-row">
-                    <i class="far fa-file-alt"></i>
-                    <div class="content">
-                        <div class="details">
-                            <span class="name">Image_01.png. Uploading</span>
-                            <span class = "percent">50%</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress"></div>
-                        </div>
-                    </div>
-                </li>
-            </section>
-            <section class="uploaded-area">
-                <li class="form-row">
-                    <div class="content ">
-                        <i class="far fa-file-alt"></i>
-                        <div class="details">
-                            <span class="name">Image_01.png. Uploading</span>
-                            <span class = "size">70 KB</span>
-                        </div>
-                    </div>
-                    <i class="fas fa-check"></i>
-                </li> 
-            </section>
+            <div>Upload your picture here</div>
+            <div id="append">
+                <form action="/upload" id="upload-box" method="POST" enctype=multipart/form-data>
+                    <input type="file" name="file" class="file-input" hidden>
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Browse file to upload</p>
+                </form>
+            </div>
+            <div>Write some cheeky description</div>
+            <input type="text" class="description-box" id="description-box" placeholder="Enter image description">
+            <button type="submit" id="submit-btn">Upload</button>
         </div>
     </div>
     <!-- Footer -->
     <footer style="background-color: #F8F8FF;">
         <div class="footerContainer">
             <div class="socialIcons">
-                <a href=""><i class="fa-brands fa-facebook"></i></a>
-                <a href=""><i class="fa-brands fa-instagram"></i></a>
-                <a href=""><i class="fa-brands fa-twitter"></i></a>
-                <a href=""><i class="fa-brands fa-google-plus"></i></a>
-                <a href=""><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.facebook.com/nguyenminkloc/"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/ng.minloc/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://github.com/minhloc29"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/minhloc/"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.youtube.com/@minhlock"><i class="fa-brands fa-youtube"></i></a>
             </div>
             <div class="footerNav">
-                <ul><li><a href="">Home</a></li>
-                    <li><a href="">News</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Contact Us</a></li>
-                    <li><a href="">our Team</a></li>
+                <ul><li><a href="#">Home</a></li>
+                    <li><a href="#upload">Upload</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#about-us">About Us</a></li>
                 </ul>
             </div>
             

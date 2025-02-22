@@ -1,11 +1,16 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, send_from_directory
 import os
+import json
+
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'loppoc29min'
 app.config['UPLOAD_FOLDER'] = 'static/images'  # Fixed this
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+
+DATA_FILE = "static/description.json"
 
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "gif"}
 
@@ -21,7 +26,7 @@ def upload():
             return redirect(request.url)
         
         file = request.files['file']
-        
+        description = request.form.get("description", "").strip()
         if file.filename == '':
             flash("No selected file!", "warning")
             return redirect(request.url)
@@ -29,13 +34,21 @@ def upload():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            # with open(DATA_FILE, "r") as f:
+            #     data = json.load(f)
+            
+            # data[filename] = description  # Store filename with description
+            
+            # with open(DATA_FILE, "w") as f:
+            #     json.dump(data, f, indent=4)
+                
             flash("File uploaded successfully!", "success")
             return redirect(url_for('upload'))
 
         flash("Invalid file type!", "danger")
     images = os.listdir(app.config['UPLOAD_FOLDER'])
     images = [os.path.join('images', image) for image in images]
-    return render_template("testhi.html", images = images)
+    return render_template("index.html", images = images)
 
 if __name__ == "__main__":
     app.run(debug=True)
