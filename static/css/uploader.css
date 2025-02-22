@@ -1,8 +1,10 @@
 .form_only {
-    padding: 30px;
+    padding: 50px;
     border-radius: 5px;
     background-color: #F8F8FF;
-    width: 30%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
@@ -11,12 +13,15 @@
 .form_only header{
     color: black;
     font-size: 27px;
-    font-weight: 600;
+    font-weight: 600px;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .form_section {
     display: flex;
+    flex-direction: column;
+    gap: 50px;
     justify-content: center; /* Centers horizontally */
     align-items: center; 
     margin-bottom: 100px;
@@ -26,7 +31,7 @@
 .form_only form{
     display: flex;
     height: 100px;
-    margin: 30px 0;
+    margin: 10px 0 30px 0;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -80,4 +85,45 @@ section .details span{
 
 .uploaded-area .details .size {
     font-size: 11px;
+}
+
+.description-box {
+    background-color: #F8F8FF;
+    margin-top: 10px;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 2px dashed;
+    color: black;
+}
+
+
+#submit-btn {
+    background: white;
+    color: black;
+    border: none;
+    margin-top: 50px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 100%;
+    border: 2px dashed;
+}
+
+.pre-upload img{
+    object-fit: cover; /* Ensures the image fills the container */
+    border-radius: 5px;
+    max-height: 250px;
+}
+
+.pre-upload{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin: 30px 0;
 }

@@ -90,3 +90,22 @@
     z-index: 1001;
   }
 
+.image-style::after{
+    content: attr(data-description);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 17px;
+    opacity: 0;
+    z-index: 10; 
+    transition: opacity 0.5s ease-in-out;
+}
+
+.image-style:hover::after {
+    opacity: 1;
+}

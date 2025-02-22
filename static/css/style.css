@@ -3,8 +3,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
-    position: relative;
-
+    scroll-behavior: smooth;
 }
 
 
@@ -101,3 +100,9 @@ body {
     object-fit: cover;
 }
 
+.frame {
+    border: 10px solid #ffffff; /* Wood-like color */
+    padding: 20px;
+    background: url('https://www.transparenttextures.com/patterns/wood.png'); /* Wood texture */
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3); /* Soft shadow */
+}

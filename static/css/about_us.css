@@ -1,4 +1,12 @@
-.strong_us {
+.about-us{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.strong_us{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,3 +47,4 @@
 .us_cap p{
     font-family: "text-font", sans-serif;
 }
+
