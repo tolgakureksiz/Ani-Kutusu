@@ -78,6 +78,74 @@ body {
     opacity: 1;
 
 }
+
+.dropdown-menu {
+    top: 0 !important;
+    right: 0 !important;  /* Aligns dropdown to the right */
+    left: auto !important; /* Ensures it doesn’t stick to the left */
+    transform: translateY(50px) !important; /* Moves it slightly down */
+    position: absolute !important;
+}
+
+/* Hide dropdown button by default */
+.dropdown {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .dropdown {
+        display: block; /* Show dropdown button */
+        position: absolute;
+        top: 10px;  /* Adjust distance from the top */
+        right: 10px; /* Move to top right */
+        z-index: 1000;
+    }
+    .cat{
+        display: none;
+    }
+    .about-us{
+        gap: 2px;
+    }
+    .navbar-nav {
+        display: none !important; /* Hide normal nav links */
+    }
+    /* .body{
+        font-size: 30px;
+    } */
+    .us_image{
+        width: 200px !important;
+        height: 200px !important;
+    }
+    .strong_us{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px !important;
+        margin: 20px 0 50px 0!important;
+    }
+    .hero-title {
+        font-size: 30px; /* Decrease font size for phones */
+        line-height: 1.2; /* Adjust line spacing */
+        text-align: center; /* Center the text */
+    }
+    .floating-img {
+        position: absolute;
+        z-index: 1;
+        width: 80px;
+        border: 5px solid white;
+        border-radius: 20px;
+        transition: transform 0.3s ease-in-out;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+    .us_cap{
+        text-align: center;
+        max-width: 80% !important;
+    }
+    .form_only{
+        width: 95% !important;
+    }
+}
 .hehe{
     background-color:  #f4f1f1;
     z-index: 1000;
