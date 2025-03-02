@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bảo Tàng Kí Ức</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS (Include in <head>) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap JavaScript (Include before closing </body>) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/intro_style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -25,15 +31,32 @@
 <body>
     <div class="hehe fixed-top">
         <nav class="navbar navbar-expand-lg bg-white">
-            <a class="navbar-brand me-auto" href="#">
-                <img src="{{ url_for('static', filename='logo/cat.jpg') }}" alt="Logo" class="logo">
-            </a>
+            <div class="container-fluid">
+                <a class="navbar-brand me-auto cat" href="#">
+                    <img src="{{ url_for('static', filename='logo/cat.jpg') }}" alt="Logo" class="logo">
+                </a>
+
+                <!-- Normal navigation (hidden on mobile) -->
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#upload">Upload</a></li>
                     <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about-us">About us</a></li>
                 </ul>
+
+                <!-- Dropdown for Mobile View -->
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-wrench fa-fw"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#">Home</a></li>
+                        <li><a class="dropdown-item" href="#upload">Upload</a></li>
+                        <li><a class="dropdown-item" href="#gallery">Gallery</a></li>
+                        <li><a class="dropdown-item" href="#about-us">About us</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </div>
     <div class="container blobing">
@@ -68,7 +91,7 @@
     <!-- 🔹 Image Gallery Below -->
      <div class="frame">
         <div class="container">
-            <div class="title hero-title">Gallery</div>
+            <div class="title hero-title" style="font-size: 70px;">Gallery</div>
             <div class="grid-container justified-gallery" id="gallery">
                 {% for image in images %}
                     <div class="image-style" data-description="{{ image.description }}"><img src="{{ url_for('static', filename=image.filename) }}" alt="Photo 1"></div>
@@ -89,7 +112,7 @@
     </script>
    
     <div class="container form_section" id="upload">
-        <h1 style="font-size: 70px">Gallery Contribution</h1>
+        <h1 style="font-size: 70px; text-align: center">Gallery Contribution</h1>
         <div class="form_only">
             <header>File Uploader</header>
             <div>Upload your picture here</div>
