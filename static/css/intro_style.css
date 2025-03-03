@@ -64,12 +64,16 @@
 .blobing::before,
 .blobing::after {
   content: '';
-  position: absolute;
+  position: fix;
   filter: blur(80px);
   opacity: 0.2;
   z-index: 1001;
+  position: absolute;
 }
 
+.first-uu{
+    position: relative;
+}
 .blobing::before {
     top: -50px;
     left: -50px;
