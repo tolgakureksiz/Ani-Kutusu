@@ -85,20 +85,79 @@ body {
     left: auto !important; /* Ensures it doesn’t stick to the left */
     transform: translateY(50px) !important; /* Moves it slightly down */
     position: absolute !important;
+    z-index: 2000 !important;
+    visibility: visible !important;
 }
 
 /* Hide dropdown button by default */
 .dropdown {
     display: none;
+    z-index: 2000;
 }
 
 @media (max-width: 991px) {
+    .dropdown-menu .dropdown-item:hover{
+        background-color: #000 !important;
+    }
+
+    .dropdown-menu{
+        z-index: 2000 !important;
+        width: 100% !important; 
+        overflow: hidden !important;
+      
+    }
+    .container-fluid {
+        max-width: 100% !important;
+        overflow-x: hidden !important; 
+    }
+    .dropdown-item{
+        z-index: 2000 !important;
+        width: 100%;
+    }
+    .footerNav ul{
+        text-align: center;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        list-style: none !important;
+        padding: 0 !important;
+        align-items: center !important;
+    }
+    .footerContainer{
+        padding-top: 50px !important;
+    }
+    .footerBottom{
+        padding: 10px 0 !important;
+    }
+    .dropdown-menu li{
+        z-index: 2000 !important;
+    }
     .dropdown {
         display: block; /* Show dropdown button */
         position: absolute;
         top: 10px;  /* Adjust distance from the top */
         right: 10px; /* Move to top right */
-        z-index: 1000;
+        z-index: 2000;
+    }
+    .dropdown-item::after{
+        content: ''  !important;
+        opacity: 0 !important;
+        transition: all 0.5s !important;
+        height: 2px !important;
+        width: 100% !important;
+        background-color: grey !important;
+        position: absolute !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        z-index: 2000 !important;
+    }
+    .dropdown-item:hover::after{
+        opacity: 1;
+        z-index: 2000 !important;
+    
+    }
+    .blobing::after{
+        z-index: 1000 !important;
     }
     .cat{
         display: none;
@@ -115,6 +174,12 @@ body {
     .us_image{
         width: 200px !important;
         height: 200px !important;
+    }
+    .form_section{
+        margin: 50px 0 50px 0 !important;
+    }
+    .form_section h1{
+        font-size: 40px !important;
     }
     .strong_us{
         display: flex;
@@ -138,12 +203,29 @@ body {
         transition: transform 0.3s ease-in-out;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     }
+    .img1{
+        z-index: 1002 !important;
+
+    }
+    .img2 {
+        top: 20% !important;
+        z-index: 1002 !important;
+        right: 10% !important;
+    }
+    .img3 {
+        bottom: 20% !important;
+        left: 20% !important;
+        z-index: 1002 !important;
+
+    }
     .us_cap{
         text-align: center;
         max-width: 80% !important;
     }
     .form_only{
         width: 95% !important;
+    }
+    body{
     }
 }
 .hehe{
