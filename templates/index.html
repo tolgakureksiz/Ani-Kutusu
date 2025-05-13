@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale = 1.0, 
 maximum-scale=1.0, user-scalable=no"/> 
-    <title>Bảo Tàng Kí Ức</title>
+    <title>Anılar Müzesi</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap CSS (Include in <head>) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -67,10 +67,10 @@ maximum-scale=1.0, user-scalable=no"/>
                 <img src="{{ url_for('static', filename='images/image_2.jpg') }}" class="floating-img img2">
                 <img src="{{ url_for('static', filename='images/image_11.jpg') }}" class="floating-img img3">
         
-                <h1 class="hero-title">MEMORY <br> GALLERY <br></h1>
+                <h1 class="hero-title">ANI <br> KUTUSU <br></h1>
         
                 <p class="location">
-                    <i class="fas fa-map-marker-alt"></i> Place for meo meo and mao mao
+                    <i class="fas fa-map-marker-alt"></i> Tolga ve Nidanın minik müzesi
                 </p>
             </section>
         </div>
@@ -83,17 +83,17 @@ maximum-scale=1.0, user-scalable=no"/>
                 <img src="{{ url_for('static', filename='logo/about_us.jpg') }}">
             </div>
             <div class="us_cap">
-                <h1>Hello, we're</h1>
-                <h2>Meo Meo and Mao Mao</h2>
+                <h1>Merhaba biz,</h1>
+                <h2>Tolga ve Nida</h2>
                 <hr>
-                <p>This website is where we share our favorite moments, capturing the joy, laughter, and adventures we experience together. From everyday snapshots to unforgettable memories, this is our little corner of the internet to celebrate and cherish the special times we’ve had. We hope you enjoy browsing through our collection as much as we love creating it!</p>
+                <p>Bu web sitesi, birlikte yaşadığımız anları, neşeyi ve  yakalayarak en sevdiğimiz anları paylaştığımız yerdir. Günlük anlık görüntülerden unutulmaz anılara, bu, geçirdiğimiz özel zamanları kutlamak ve değerlendirmek için internetteki küçük köşemizdir. Umarız koleksiyonumuza göz atmaktan benim onu ​​yaratmayı sevdiğim kadar keyif alırsın!</p>
             </div>
         </div>
     </div>
-    <!-- 🔹 Image Gallery Below -->
+    <!-- 🔹 Anı Galerimiz Aşağıda -->
      <div class="frame">
         <div class="container">
-            <div class="title hero-title" style="font-size: 70px;">Gallery</div>
+            <div class="title hero-title" style="font-size: 70px;">Galeri</div>
             <div class="grid-container justified-gallery" id="gallery">
                 {% for image in images %}
                     <div class="image-style" data-description="{{ image.description }}"><img src="{{ url_for('static', filename=image.filename) }}" alt="Photo 1"></div>
@@ -114,19 +114,19 @@ maximum-scale=1.0, user-scalable=no"/>
     </script>
    
     <div class="container form_section" id="upload">
-        <h1 style="font-size: 70px; text-align: center">Gallery Contribution</h1>
+        <h1 style="font-size: 70px; text-align: center">Galeriye Ekle</h1>
         <div class="form_only">
-            <header>File Uploader</header>
-            <div>Upload your picture here</div>
+            <header>Dosya Yükleyici</header>
+            <div>Fotoğrafını Buradan Yükle</div>
             <div id="append">
                 <form action="/upload" id="upload-box" method="POST" enctype=multipart/form-data>
                     <input type="file" name="file" class="file-input" hidden>
                     <i class="fas fa-cloud-upload-alt"></i>
-                    <p>Browse file to upload</p>
+                    <p>Yüklemek İçin Dosyaları Gezin</p>
                 </form>
             </div>
-            <div>Write some cheeky description</div>
-            <input type="text" class="description-box" id="description-box" placeholder="Enter image description">
+            <div>Birazcık Açıklama Yaz (Dikkat Et Yavru Farecik elini Isırmasın :D </div>
+            <input type="text" class="description-box" id="description-box" placeholder="Resim Açıklaması Gir">
             <button type="submit" id="submit-btn">Upload</button>
         </div>
     </div>
@@ -134,11 +134,11 @@ maximum-scale=1.0, user-scalable=no"/>
     <footer style="background-color: #F8F8FF;">
         <div class="footerContainer">
             <div class="socialIcons">
-                <a href="https://www.facebook.com/nguyenminkloc/"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.instagram.com/ng.minloc/"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://github.com/minhloc29"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/minhloc/"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://www.youtube.com/@minhlock"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.facebook.com/TolgaKureksiz/"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/tulgie/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://github.com/"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.youtube.com/watch?v=zx6NkXvzrNc"><i class="fa-brands fa-youtube"></i></a>
             </div>
             <div class="footerNav">
                 <ul><li><a href="#">Home</a></li>
@@ -150,7 +150,7 @@ maximum-scale=1.0, user-scalable=no"/>
             
         </div>
         <div class="footerBottom">
-            <p>Copyright &copy;2025; Designed by <span class="designer">Minh Lộc</span></p>
+            <p>Copyright &copy;2025; Designed by <span class="designer">Tolga</span></p>
         </div>
     </footer>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
